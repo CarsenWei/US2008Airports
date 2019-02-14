@@ -1,5 +1,5 @@
 # US2008Airports
-R Shiny applet to visualize USA airport data on cancellations in 2008
+[R Shiny](https://shiny.rstudio.com/) applet and [QGIS](https://www.qgis.org/en/site/) to visualize USA airport data on cancellations in 2008
 
 ### Data
 The dataset air.csv was downloaded from http://rtricks4kids.ok.ubc.ca/wjbraun/DS550/air.csv
@@ -18,7 +18,7 @@ colnames(air)
 # [28] "SecurityDelay"     "LateAircraftDelay"
 ```
 The data folder contains two aggregated datasets generated from the air.csv file.
-```{r}
+```
 colnames(airports)  #301 rows
 # [1] "latitude_deg"  "longitude_deg" "elevation_ft"  "iata_code"    
 # [5] "NDepartures"   "NArrivals"     "Cancelled"   
@@ -38,4 +38,10 @@ The poster (poster.pdf) presents preliminary analysis resutls of the cancellatio
 3. Mapping the "top6% airports" (Shiny applet in the poster folder), there is no correlation between cancellation percentage and fight volumn (Fig. 2). There is a cluster in the Midwest, which we performed a case study in Fig. 6 and more spatial analysis in Presentation.
 
 ### Presentation
-The presentation provides more visulizations from spatial analysis.
+The presentation (Presentation.pdf) provides more visulizations from spatial analysis.
+
+1. Finding the spatial pattern: classifying the airports into hot spots, cold spots, and insignificant. The was done in QGIS, and the outputs are the maps in Presentation.pdf and the csv files in the presentation folder.
+
+2. A Shiny dashboad (code in the presentation folder) was developed for the user to compare cancellation hot spots and cold spots.
+
+3. `lattice` conditional plots were employed to compare monthly flight volumn by different airlines at the cold spots. We can also examine airlines performance at hot spots, or other factors such as flight duration (airtime).
